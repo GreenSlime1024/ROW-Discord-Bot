@@ -1,10 +1,9 @@
 import discord
 from discord.ext import commands
 import json
-import keep_alive
 import os
 
-with open('setting.json', mode='r', encoding='utf8') as jfile:
+with open('not_token.json', mode='r', encoding='utf8') as jfile:
   jdata = json.load(jfile)
 
 intents = discord.Intents.all()
@@ -50,5 +49,4 @@ for filename in os.listdir('./cmds'):
     bot.load_extension(f'cmds.{filename[:-3]}')
 
 if __name__ == "__main__":
-  keep_alive.keep_alive()
   bot.run(jdata['TOKEN'])
