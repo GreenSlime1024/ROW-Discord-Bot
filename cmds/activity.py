@@ -11,7 +11,7 @@ class Task(Cog_Extension):
       while not self.bot.is_closed():
         await self.bot.change_presence(activity=discord.Game(name="SD預計2022.12.31重啟伺服器"))
         await asyncio.sleep(10)
-        await self.bot.change_presence(activity=discord.Game(name="運作平台: NAFH"))
+        await self.bot.change_presence(activity=discord.Game(name="運作平台: 桌機"))
         await asyncio.sleep(10)
         await self.bot.change_presence(activity=discord.Game(name="Prefix: r!"))
         await asyncio.sleep(10)
