@@ -23,5 +23,9 @@ class Main(Cog_Extension):
     userAvatarUrl = avamember.avatar_url
     await ctx.reply(userAvatarUrl , mention_author=False)
 
+  @commands.command()
+  async def row(self, ctx):
+    await ctx.send('https://greenslime9392.github.io/posts/21/07/row/')
+
 def setup(bot):
   bot.add_cog(Main(bot))
