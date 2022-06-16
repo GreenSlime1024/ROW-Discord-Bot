@@ -5,6 +5,9 @@ from core.classes import Cog_Extension
 class Main(Cog_Extension):
   @commands.command()
   async def ping(self, ctx):
+    '''
+    顯示 ping
+    '''
     await ctx.reply(f'pong ({round(self.bot.latency*1000)}ms)', mention_author=False)
 
   @commands.command()
@@ -24,7 +27,10 @@ class Main(Cog_Extension):
     await ctx.reply(userAvatarUrl , mention_author=False)
 
   @commands.command()
-  async def row(self, ctx):
+  async def ROW(self, ctx):
+    '''
+    關於 ROW 的網頁
+    '''
     await ctx.send('https://greenslime9392.github.io/posts/21/07/row/')
 
 def setup(bot):
