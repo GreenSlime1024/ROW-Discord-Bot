@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-
 import json
 import os
 
@@ -14,8 +13,6 @@ bot = commands.Bot(command_prefix='r! ', intents=intents)
 @bot.event
 async def on_ready():
   print('>>Bot is online<<')
-  #activity = discord.Activity(type=discord.ActivityType.listening, name="音樂")
-  #await bot.change_presence(status=discord.Status.dnd, activity=activity)
 
 @bot.command()
 async def load(ctx, extension):
