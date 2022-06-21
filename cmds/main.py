@@ -33,5 +33,12 @@ class Main(Cog_Extension):
     '''
     await ctx.send('https://greenslime9392.github.io/posts/21/07/row/')
 
+  @commands.command()
+  async def author(self, ctx):
+    '''
+    關於 GreenSlime 的網頁
+    '''
+    await ctx.send('https://greenslime9392.github.io/')
+
 def setup(bot):
   bot.add_cog(Main(bot))
