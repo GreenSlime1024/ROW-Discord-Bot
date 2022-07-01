@@ -10,17 +10,17 @@ with open('setting.json', mode='r', encoding='utf8') as jfile:
 class Event(Cog_Extension):
   @commands.Cog.listener()
   async def on_message(self, msg):
-    if '早安' in msg.content and msg.author != self.bot.user:
+    if msg.content == '早安' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
-        await msg.channel.send('咖啡 呼啦')
+        await msg.channel.send('早安')
         
-    if '午安' in msg.content and msg.author != self.bot.user:
+    if msg.content == '午安' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('午安') 
 
-    if '晚安' in msg.content and msg.author != self.bot.user:
+    if msg.content == '晚安' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('晚安 :zzz: ')
@@ -30,7 +30,7 @@ class Event(Cog_Extension):
         await asyncio.sleep(1)
         await msg.channel.send('https://cdn.discordapp.com/attachments/694534457985597443/882552709083971604/image0.png')
       
-    if '真的假的' in msg.content and msg.author != self.bot.user:
+    if msg.content == '真的假的' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('~~假的~~')
@@ -39,6 +39,11 @@ class Event(Cog_Extension):
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('虛~ 他在睡覺')
+
+    if '<@973095087246557224>' in msg.content and msg.author != self.bot.user:
+      async with msg.channel.typing():
+        await asyncio.sleep(1)
+        await msg.channel.send('輸入 `r! help` 了解更多')
   
 def setup(bot):
   bot.add_cog(Event(bot))
