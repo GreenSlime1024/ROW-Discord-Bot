@@ -19,6 +19,21 @@ class Couplets(Cog_Extension):
       else:
         await ctx.channel.edit(name=name + '⟨福⟩')
       await ctx.reply('(貼', mention_author=False)
+  @commands.command()
+  async def 撕春聯(self, ctx):
+    '''
+    撕春聯
+    '''
+    name = ctx.channel.name
+    length = len(name)
+    if name.endswith('⟨春⟩') or name.endswith('⟨福⟩'):
+      name = name[:length-3]
+      await ctx.channel.edit(name=name)
+      await ctx.reply('(撕', mention_author=False)
+    else:
+      await ctx.reply('沒有春聯可以撕喔', mention_author=False)
+      
+      
 
 def setup(bot):
   bot.add_cog(Couplets(bot))
