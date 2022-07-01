@@ -15,7 +15,7 @@ class Task(Cog_Extension):
         await asyncio.sleep(10)
         await self.bot.change_presence(activity=discord.Game(name="Prefix: r!"))
         await asyncio.sleep(10)
-        await self.bot.change_presence(activity=discord.Game(name="ROW’ｓ DC: https://discord.gg/7gK6HMRqve"))
+        await self.bot.change_presence(activity=discord.Game(name="ROW 網站: https://greenslime9392.github.io/posts/21/07/row/"))
         await asyncio.sleep(10)
         await self.bot.change_presence(activity=discord.Game(name="Made By GreenSlime#9392"))
         await asyncio.sleep(10)
