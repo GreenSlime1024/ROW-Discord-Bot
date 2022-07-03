@@ -33,7 +33,7 @@ class Main(Cog_Extension):
   @commands.command()
   async def author(self, ctx):
     '''
-    關於 GreenSlime 的網頁
+    GreenSlime 的網站
     '''
     await ctx.send('https://greenslime9392.github.io/')
   

@@ -23,7 +23,7 @@ class Event(Cog_Extension):
     if msg.content == '晚安' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
-        await msg.channel.send('晚安 :zzz: ')
+        await msg.channel.send('晚安')
     
     if '免費nitro' in msg.content and msg.author != self.bot.user:
       async with msg.channel.typing():

@@ -22,7 +22,7 @@ class Couplets(Cog_Extension):
   @commands.command()
   async def 撕春聯(self, ctx):
     '''
-    撕春聯
+    把頻道名稱後方的春聯撕起來
     '''
     name = ctx.channel.name
     length = len(name)
