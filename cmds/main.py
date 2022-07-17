@@ -7,15 +7,21 @@ from discord_slash import cog_ext
 class Main(Cog_Extension):
   @cog_ext.cog_slash()
   async def ping(self, ctx):
+    '''
+    顯示目前的 ping
+    '''
     await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
 
   @cog_ext.cog_slash()
-  async def avatar(self, ctx, *,  avamember : discord.Member=None):
+  async def avatar(self, ctx, avamember : discord.Member=None):
     '''
-    [@某人]
+    [tag 某人]
     '''
+    print(1)
     userAvatarUrl = avamember.avatar_url
+    print(2)
     await ctx.send(userAvatarUrl)
+    print(3)
     
   @cog_ext.cog_slash()
   async def ROW(self, ctx):
