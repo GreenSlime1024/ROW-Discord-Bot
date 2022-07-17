@@ -5,12 +5,14 @@ import datetime
 import json
 import random
 import asyncio
+from discord_slash import cog_ext
+
 
 with open('setting.json', mode='r', encoding='utf8') as jfile:
   jdata = json.load(jfile)
 
 class Wool(Cog_Extension):
-  @commands.command()
+  @cog_ext.cog_slash()
   async def buyw(self, ctx, 顏色, 數量, 交貨方式 ,*,備註):
     '''
     [顏色] [數量] [交貨方式] [備註]
@@ -28,10 +30,9 @@ class Wool(Cog_Extension):
     async with ctx.channel.typing():
         await asyncio.sleep(1)
         await channel.send(embed=embed)
-        await ctx.reply(f'訂購成功 :white_check_mark:', mention_author=False)
+        await ctx.send(f'訂購成功 :white_check_mark:')
 
-  @commands.has_permissions(administrator=True)
-  @commands.command()
+  @cog_ext.cog_slash()
   async def set_order_channel(self, ctx, channel : discord.TextChannel=None):
     '''
     非開發人員請勿亂用
@@ -42,7 +43,7 @@ class Wool(Cog_Extension):
     with open('setting.json', mode='w', encoding='utf8') as jfile:
      json.dump(jdata, jfile, indent=4)
     self.channel = self.bot.get_channel(int(jdata['Order_channel'])) 
-    await ctx.reply(f'已設置訂單儲存頻道:{self.channel.mention} :white_check_mark:', mention_author=False) 
+    await ctx.send(f'已設置訂單儲存頻道:{self.channel.mention} :white_check_mark:') 
         
 def setup(bot):
   bot.add_cog(Wool(bot))

@@ -1,13 +1,15 @@
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
+from discord_slash import cog_ext
+
 
 class Main(Cog_Extension):
-  @commands.command()
+  @cog_ext.cog_slash()
   async def ping(self, ctx):
-    await ctx.reply(f'pong ({round(self.bot.latency*1000)}ms)', mention_author=False)
+    await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
 
-  @commands.command()
+  @cog_ext.cog_slash()
   async def sayd(self, ctx, *, msg):
     '''
     [想要讓機器人說的話]
@@ -15,22 +17,22 @@ class Main(Cog_Extension):
     await ctx.message.delete()
     await ctx.send(msg)
 
-  @commands.command()
+  @cog_ext.cog_slash()
   async def avatar(self, ctx, *,  avamember : discord.Member=None):
     '''
     [@某人]
     '''
     userAvatarUrl = avamember.avatar_url
-    await ctx.reply(userAvatarUrl , mention_author=False)
+    await ctx.send(userAvatarUrl )
     
-  @commands.command()
+  @cog_ext.cog_slash()
   async def ROW(self, ctx):
     '''
     ROW 的介紹網站
     '''
     await ctx.send('https://greenslime9392.github.io/posts/21/07/row/')
 
-  @commands.command()
+  @cog_ext.cog_slash()
   async def author(self, ctx):
     '''
     GreenSlime 的網站
