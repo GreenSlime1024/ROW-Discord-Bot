@@ -17,27 +17,18 @@ slash = SlashCommand(bot, sync_commands=True)
 async def on_ready():
   print('>>Bot is online<<')
 
-@slash.slash()
+@slash.slash(name='load', description='load')
 async def load(ctx, extension):
-  '''
-  非開發人員請勿亂用
-  '''
   bot.load_extension(f'cmds.{extension}')
   await ctx.send(f'已載入 [{extension}] :white_check_mark:')
 
-@slash.slash()
+@slash.slash(name='unload', description='unload')
 async def unload(ctx, extension):
-  '''
-  非開發人員請勿亂用
-  '''
   bot.unload_extension(f'cmds.{extension}')
   await ctx.send(f'已卸載 [{extension}] :white_check_mark:')
 
-@slash.slash()
+@slash.slash(name='reload', description='reload')
 async def reload(ctx, extension):
-  '''
-  非開發人員請勿亂用
-  '''
   bot.reload_extension(f'cmds.{extension}')
   await ctx.send(f'已重載 [{extension}] :white_check_mark:')
 

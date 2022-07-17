@@ -19,6 +19,7 @@ class Couplets(Cog_Extension):
       else:
         await ctx.channel.edit(name=name + '⟨福⟩')
       await ctx.reply('(貼', mention_author=False)
+
   @commands.command()
   async def 撕春聯(self, ctx):
     '''
