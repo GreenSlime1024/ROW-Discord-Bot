@@ -23,7 +23,7 @@ class Main(Cog_Extension):
     [@某人]
     '''
     userAvatarUrl = avamember.avatar_url
-    await ctx.send(userAvatarUrl )
+    await ctx.send(userAvatarUrl)
     
   @cog_ext.cog_slash()
   async def ROW(self, ctx):
