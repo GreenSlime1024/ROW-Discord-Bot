@@ -7,7 +7,7 @@ from discord_slash import cog_ext
 class Main(Cog_Extension):
   @cog_ext.cog_slash()
   async def ping(self, ctx):
-    await ctx.respond(f'pong ({round(self.bot.latency*1000)}ms)')
+    await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
 
   @cog_ext.cog_slash()
   async def avatar(self, ctx, *,  avamember : discord.Member=None):
