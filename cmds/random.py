@@ -11,7 +11,7 @@ with open('ball.json', mode='r', encoding='utf8') as jfile:
 
 class Random(Cog_Extension):
   @cog_ext.cog_slash()
-  async def ball(self, ctx, msg):
+  async def ball(self, ctx, question):
     '''
     [想要問的問題]
     '''

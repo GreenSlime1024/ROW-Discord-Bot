@@ -22,7 +22,7 @@ class Wool(Cog_Extension):
     embed=discord.Embed(title="羊毛訂購單", color=0x8280ff, timestamp=datetime.datetime.now())
     embed.set_author(name=ctx.author, icon_url=ctx.message.author.avatar_url)
     embed.add_field(name="顏色", value=顏色, inline=False)
-    embed.add_field(name="數量", value=(f'{數量}小箱'), inline=False)
+    embed.add_field(name="數量", value=(f'{數量} 大箱'), inline=False)
     embed.add_field(name="交貨方式", value=交貨方式, inline=False)
     embed.add_field(name="備註", value=備註, inline=False)
     embed.add_field(name="價格", value=(f'未來幣 {price} 元'), inline=False)
