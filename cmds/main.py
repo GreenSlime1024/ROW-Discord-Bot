@@ -7,15 +7,7 @@ from discord_slash import cog_ext
 class Main(Cog_Extension):
   @cog_ext.cog_slash()
   async def ping(self, ctx):
-    await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
-
-  @cog_ext.cog_slash()
-  async def sayd(self, ctx, *, msg):
-    '''
-    [想要讓機器人說的話]
-    '''
-    await ctx.message.delete()
-    await ctx.send(msg)
+    await ctx.respond(f'pong ({round(self.bot.latency*1000)}ms)')
 
   @cog_ext.cog_slash()
   async def avatar(self, ctx, *,  avamember : discord.Member=None):
