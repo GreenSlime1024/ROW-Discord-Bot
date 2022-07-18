@@ -8,19 +8,19 @@ class Main(Cog_Extension):
   @cog_ext.cog_slash()
   async def ping(self, ctx):
     '''
-    顯示目前的 ping
+    查看目前的 ping
     '''
     await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
 
   @cog_ext.cog_slash()
   async def avatar(self, ctx, avamember : discord.Member=None):
     '''
-    [tag 某人]
+    查看使用者的頭像
     '''
     print(1)
     userAvatarUrl = avamember.avatar_url
     print(2)
-    await ctx.send(userAvatarUrl)
+    await ctx.send(str(userAvatarUrl))
     print(3)
     
   @cog_ext.cog_slash()
