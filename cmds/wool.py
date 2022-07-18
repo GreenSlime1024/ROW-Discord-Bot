@@ -8,11 +8,9 @@ import random
 import asyncio
 from discord_slash import cog_ext
 
-
 with open('setting.json', mode='r', encoding='utf8') as jfile:
   jdata = json.load(jfile)
 
-from typing import Optional
 class Wool(Cog_Extension):
   @cog_ext.cog_slash()
   async def buyw(self, ctx, 顏色, 大箱:int, 小箱:int , 交貨方式,  要送給誰: discord.abc.User='沒有人', 備註 : str='沒有備註'):
