@@ -13,7 +13,7 @@ class Random(Cog_Extension):
   @cog_ext.cog_slash()
   async def ball(self, ctx, question):
     '''
-    [想要問的問題]
+    神奇八號球
     '''
     random_ball = random.choice(jdata['ball'])
     if random_ball == "https://cdn.discordapp.com/attachments/887330126147256323/919167797240688680/81235.png":
@@ -23,7 +23,7 @@ class Random(Cog_Extension):
   @cog_ext.cog_slash()
   async def pa(self, ctx, *, msg):
     '''
-    [想要問的問題]
+    預估某事件發生的機率
     '''
     rate = random.randint(0,100)
     await ctx.send(f'{msg}的機率有 **{rate}%**')

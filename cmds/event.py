@@ -35,12 +35,12 @@ class Event(Cog_Extension):
         await asyncio.sleep(1)
         await msg.channel.send('~~假的~~')
 
-    if '<@602037424863969283>' in msg.content and msg.author != self.bot.user:
+    if msg.content == '<@602037424863969283>' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('虛~ 他在睡覺')
-
-    if '<@973095087246557224>' in msg.content and msg.author != self.bot.user:
+        
+    if msg.content == '<@973095087246557224>' and msg.author != self.bot.user:
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('輸入 `r! help` 了解更多')

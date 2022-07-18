@@ -1,3 +1,4 @@
+from types import NoneType
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
@@ -11,31 +12,35 @@ from discord_slash import cog_ext
 with open('setting.json', mode='r', encoding='utf8') as jfile:
   jdata = json.load(jfile)
 
+from typing import Optional
 class Wool(Cog_Extension):
   @cog_ext.cog_slash()
-  async def buyw(self, ctx, 顏色, 數量, 交貨方式 ,*,備註):
+  async def buyw(self, ctx, 顏色, 大箱:int, 小箱:int , 交貨方式,  要送給誰: discord.abc.User='沒有人', 備註 : str='沒有備註'):
     '''
-    [顏色] [數量] [交貨方式] [備註]
+    產生 $羊毛訂購單$
     '''
     channel = self.bot.get_channel(int(jdata['Order_channel']))
-    price = float(數量)*8640
-    embed=discord.Embed(title="羊毛訂購單", color=0x8280ff, timestamp=datetime.datetime.now())
-    embed.set_author(name=ctx.author, icon_url=ctx.message.author.avatar_url)
+    price = 大箱*8640+小箱*4320
+    embed=discord.Embed(title="$羊毛訂購單$", color=0x8280ff, timestamp=datetime.datetime.utcnow())
+    embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
     embed.add_field(name="顏色", value=顏色, inline=False)
-    embed.add_field(name="數量", value=(f'{數量} 大箱'), inline=False)
+    embed.add_field(name="數量", value=(f'{大箱} 大箱, {小箱}, 小箱'), inline=False)
     embed.add_field(name="交貨方式", value=交貨方式, inline=False)
+    embed.add_field(name="要送給誰", value=要送給誰, inline=False)
     embed.add_field(name="備註", value=備註, inline=False)
     embed.add_field(name="價格", value=(f'未來幣 {price} 元'), inline=False)
     embed.set_footer(text=random.randint(100000,999999))
+    
     async with ctx.channel.typing():
         await asyncio.sleep(1)
         await channel.send(embed=embed)
         await ctx.send(f'訂購成功 :white_check_mark:')
+        
 
   @cog_ext.cog_slash()
   async def set_order_channel(self, ctx, channel : discord.TextChannel=None):
     '''
-    非開發人員請勿亂用
+    設定訂單放置頻道
     '''
     with open('setting.json', mode='r', encoding='utf8') as jfile:
       jdata = json.load(jfile)

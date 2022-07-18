@@ -14,14 +14,14 @@ class Image(Cog_Extension):
   @cog_ext.cog_slash()
   async def i(self, ctx,*,msg):
     '''
-    [圖片名稱]
+    查看圖片
     '''
     await ctx.send(jdata[msg])
 
   @cog_ext.cog_slash()
   async def iadd(self, ctx, name, url):
     '''
-    [新圖片名稱] [新圖片url]
+    新增圖片
     '''
     with open('image.json', 'w', encoding='utf8') as jfile:
       jdata[name] = url
