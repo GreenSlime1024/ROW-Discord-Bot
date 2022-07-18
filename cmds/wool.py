@@ -1,4 +1,3 @@
-from types import NoneType
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
