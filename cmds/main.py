@@ -17,11 +17,8 @@ class Main(Cog_Extension):
     '''
     查看 使用者的頭像
     '''
-    print(1)
     userAvatarUrl = avamember.avatar_url
-    print(2)
     await ctx.send(str(userAvatarUrl))
-    print(3)
     
   @cog_ext.cog_slash()
   async def ROW(self, ctx):
