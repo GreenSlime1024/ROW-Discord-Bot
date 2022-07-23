@@ -12,11 +12,11 @@ reload_setting()
 
 class Image(Cog_Extension):
   @cog_ext.cog_slash()
-  async def i(self, ctx,*,msg):
+  async def i(self, ctx, url):
     '''
     查看圖片
     '''
-    await ctx.send(jdata[msg])
+    await ctx.send(jdata[url])
 
   @cog_ext.cog_slash()
   async def iadd(self, ctx, name, url):
