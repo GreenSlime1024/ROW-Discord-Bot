@@ -13,11 +13,11 @@ class Main(Cog_Extension):
     await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
 
   @cog_ext.cog_slash()
-  async def avatar(self, ctx, avamember : discord.Member=None):
+  async def avatar(self, ctx, avamember : discord.Member, size=1024):
     '''
     查看 使用者的頭像
     '''
-    userAvatarUrl = avamember.avatar_url
+    userAvatarUrl = avamember.avatar_url_as(size=int(size))
     await ctx.send(str(userAvatarUrl))
     
   @cog_ext.cog_slash()

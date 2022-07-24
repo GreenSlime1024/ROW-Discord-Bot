@@ -39,11 +39,6 @@ class Event(Cog_Extension):
       async with msg.channel.typing():
         await asyncio.sleep(1)
         await msg.channel.send('虛~ 他在睡覺')
-        
-    if msg.content == '<@973095087246557224>' and msg.author != self.bot.user:
-      async with msg.channel.typing():
-        await asyncio.sleep(1)
-        await msg.channel.send('輸入 `r! help` 了解更多')
   
 def setup(bot):
   bot.add_cog(Event(bot))
