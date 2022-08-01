@@ -9,7 +9,7 @@ with open('image.json', 'r', encoding='utf8') as jfile:
 
 class Image(Cog_Extension):
   @cog_ext.cog_slash()
-  async def i(self, ctx, url):
+  async def image(self, ctx, url):
     '''
     查看圖片
     '''
