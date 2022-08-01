@@ -9,11 +9,11 @@ with open('image.json', 'r', encoding='utf8') as jfile:
 
 class Image(Cog_Extension):
   @cog_ext.cog_slash()
-  async def image(self, ctx, url):
+  async def image(self, ctx, name):
     '''
     查看圖片
     '''
-    await ctx.send(jdata[url])
+    await ctx.send(jdata[name])
 
   @cog_ext.cog_slash()
   async def iadd(self, ctx, name, url):
