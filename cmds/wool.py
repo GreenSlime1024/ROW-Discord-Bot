@@ -39,13 +39,11 @@ class Wool(Cog_Extension):
     '''
     設定訂單放置頻道
     '''
-    with open('setting.json', mode='r', encoding='utf8') as jfile:
-      jdata = json.load(jfile)
     jdata["Order_channel"] = channel.id
     with open('setting.json', mode='w', encoding='utf8') as jfile:
      json.dump(jdata, jfile, indent=4)
     self.channel = self.bot.get_channel(int(jdata['Order_channel'])) 
-    await ctx.send(f'已設置訂單儲存頻道:{self.channel.mention} :white_check_mark:') 
+    await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} :white_check_mark:') 
         
 def setup(bot):
   bot.add_cog(Wool(bot))
