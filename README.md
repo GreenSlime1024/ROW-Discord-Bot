@@ -14,7 +14,7 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 
 ### 新版
 輸入 /buyw 然後依序填入空格，後面還有兩個選填，要送給誰和備註。
-{{< youtube UTab8VGbuOw >}}
+[![IMAGE ALT TEXT HERE]([https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg](https://cdn.discordapp.com/attachments/786971603334201385/1003699492186497154/unknown.png))](https://www.youtube.com/watch?v=UTab8VGbuOw)
 
 ---
 ## m.cs 建造中
