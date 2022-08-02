@@ -13,8 +13,8 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 ![Image](https://cdn.discordapp.com/attachments/915198299370324009/985216307035271218/1fab1ebc3766a852.png#center)
 
 ### 新版
-輸入 /buyw 然後依序填入空格，後面還有兩個選填，要送給誰和備註。
-{{< youtube UTab8VGbuOw >}}
+輸入 /buyw 然後依序填入空格，後面還有兩個選填，要送給誰和備註。 (按一下圖片可以去 YouTube 看影片)
+[![輸入 /buyw 然後依序填入空格，後面還有兩個選填，要送給誰和備註。](https://cdn.discordapp.com/attachments/786971603334201385/1003699492186497154/unknown.png)](https://youtu.be/UTab8VGbuOw)
 
 ---
 ## m.cs 建造中
