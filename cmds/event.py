@@ -2,7 +2,6 @@ import discord
 import asyncio
 from discord.ext import commands
 from core.classes import Cog_Extension
-import json
 
 class Event(Cog_Extension):
   @commands.Cog.listener()
