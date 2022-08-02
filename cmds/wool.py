@@ -21,7 +21,7 @@ class Wool(Cog_Extension):
     embed=discord.Embed(title="$羊毛訂購單$", color=0x8280ff, timestamp=datetime.datetime.utcnow())
     embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
     embed.add_field(name="顏色", value=顏色, inline=False)
-    embed.add_field(name="數量", value=(f'{大箱} 大箱, {小箱}, 小箱'), inline=False)
+    embed.add_field(name="數量", value=(f'{大箱} 大箱, {小箱} 小箱'), inline=False)
     embed.add_field(name="交貨方式", value=交貨方式, inline=False)
     embed.add_field(name="要送給誰", value=要送給誰, inline=False)
     embed.add_field(name="備註", value=備註, inline=False)
@@ -39,13 +39,11 @@ class Wool(Cog_Extension):
     '''
     設定訂單放置頻道
     '''
-    with open('setting.json', mode='r', encoding='utf8') as jfile:
-      jdata = json.load(jfile)
     jdata["Order_channel"] = channel.id
     with open('setting.json', mode='w', encoding='utf8') as jfile:
      json.dump(jdata, jfile, indent=4)
     self.channel = self.bot.get_channel(int(jdata['Order_channel'])) 
-    await ctx.send(f'已設置訂單儲存頻道:{self.channel.mention} :white_check_mark:') 
+    await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} :white_check_mark:') 
         
 def setup(bot):
   bot.add_cog(Wool(bot))
