@@ -1,6 +1,5 @@
 import discord
 import json
-import os
 from discord.ext import commands
 from discord_slash import SlashCommand
 
@@ -35,10 +34,6 @@ async def reload(ctx, extension):
 @bot.event
 async def on_command_error(ctx, error):
  await ctx.send(error)
-
-for filename in os.listdir('./cmds'):
-  if filename.endswith('.py'):
-    bot.load_extension(f'cmds.{filename[:-3]}')
 
 if __name__ == "__main__":
   bot.run(jdata['TOKEN'])
