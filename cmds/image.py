@@ -28,7 +28,7 @@ class Image(Cog_Extension):
   @cog_ext.cog_slash()
   async def names(self, ctx):
     '''
-    查看 所有資料庫中的圖片名稱
+    查看所有資料庫中的圖片名稱
     '''
     await ctx.send(f'{jdata.keys()}')
 
