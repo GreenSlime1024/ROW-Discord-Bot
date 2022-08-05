@@ -8,10 +8,11 @@ from discord_slash import cog_ext
 
 class Wool(Cog_Extension):
     @cog_ext.cog_slash()
-    async def sell(self, ctx, 物品名稱, 價格, 數量:int):
+    async def sell(self, ctx, 物品名稱, 價格:float, 數量:int):
         '''
-        出售物品
+        賣出物品
         '''
+        time = str(datetime.datetime.now())[20:]
         with open('setting.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         channel = self.bot.get_channel(int(jdata['Trade_channel']))
@@ -20,15 +21,18 @@ class Wool(Cog_Extension):
         embed.add_field(name="物品名稱", value=物品名稱, inline=False)
         embed.add_field(name="價格", value=(價格), inline=False)
         embed.add_field(name="數量", value=數量, inline=False)
-        embed.set_footer(text=datetime.datetime.now())
+        embed.set_footer(text=time)
+
+        time = str(datetime.datetime.now())[20:]
 
         data = {
-            datetime.datetime.now():
+            time:
             {
-            "物品名稱": 物品名稱,
-            "價格": 價格,
-            "數量": 數量,
-            "status": True
+            "name": 物品名稱,
+            "price": 價格,
+            "amount ": 數量,
+            "status": True,
+            "dtime": str(datetime.datetime.now())
             }
         }
 
@@ -44,6 +48,16 @@ class Wool(Cog_Extension):
             await asyncio.sleep(1)
             await channel.send(embed=embed)
             await ctx.send(f'已送出物品拍賣單 :white_check_mark:')
+
+    @cog_ext.cog_slash()
+    async def buy(self, ctx, 賣家 : discord.Member, 訂單編號):
+        '''
+        買入物品
+        '''
+        with open('trade.json', mode='r', encoding='utf8') as jfile:
+            jdata = json.load(jfile)
+
+
         
 
     @cog_ext.cog_slash()
