@@ -22,7 +22,6 @@ class Wool(Cog_Extension):
         embed.add_field(name="數量", value=數量, inline=False)
         embed.set_footer(text=datetime.datetime.now())
 
-
         data = {
             datetime.datetime.now():
             {
