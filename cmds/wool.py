@@ -12,7 +12,7 @@ with open('setting.json', mode='r', encoding='utf8') as jfile:
 
 class Wool(Cog_Extension):
     @cog_ext.cog_slash()
-    async def buyw(self, ctx, 顏色, 大箱:int, 小箱:int , 交貨方式,  要送給誰: discord.abc.User='沒有人', 備註 : str='沒有備註'):
+    async def wool(self, ctx, 顏色, 大箱:int, 小箱:int , 交貨方式,  要送給誰: discord.abc.User='沒有人', 備註 : str='沒有備註'):
       '''
       產生 $羊毛訂購單$
       '''
