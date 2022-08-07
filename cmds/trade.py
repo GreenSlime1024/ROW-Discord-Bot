@@ -18,7 +18,7 @@ class Wool(Cog_Extension):
         with open('setting.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         channel = self.bot.get_channel(int(jdata['Trade_channel']))
-        embed=discord.Embed(title="物品拍賣單", color=0x00ff40, timestamp=datetime.datetime.utcnow())
+        embed=discord.Embed(title="物品上架", color=0x00ff40, timestamp=datetime.datetime.utcnow())
         embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
         embed.add_field(name="物品名稱", value=物品名稱, inline=False)
         embed.add_field(name="價格", value=價格, inline=False)
@@ -28,7 +28,8 @@ class Wool(Cog_Extension):
         data = {
             "name": 物品名稱,
             "price": 價格,
-            "amount ": 數量,
+            "amount": 數量,
+            "id": ctx.author.id,
             "status": True,
             "dtime": str(datetime.datetime.now())
         }
@@ -49,31 +50,57 @@ class Wool(Cog_Extension):
         async with ctx.channel.typing():
             await asyncio.sleep(1)
             await channel.send(embed=embed)
-            await ctx.send(f'已送出物品拍賣單 :white_check_mark:')
+            await ctx.send(f'上架成功 :white_check_mark:')
 
     @cog_ext.cog_slash()
-    async def buy(self, ctx, 訂單編號):
+    async def buy(self, ctx, 訂單編號, 數量):
         '''
         買入物品
         '''
+        with open('setting.json', mode='r', encoding='utf8') as jfile:
+            jdata = json.load(jfile)
+        channel = self.bot.get_channel(int(jdata['Trade_channel']))
         with open('trade.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         data = jdata[訂單編號]
-        name = data['name']
-        price = data['price']
-        amount = data['amount']
         status = data['status']
+        if status:
+            name = data['name']
+            price = float(data['price'])
+            數量 = int(數量)
+            amount = data['amount']
+            id = data['id']
+            user = self.bot.get_user(id)
+            embed=discord.Embed(title="物品購買", color=0x006eff, timestamp=datetime.datetime.utcnow())
+            embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
+            embed.add_field(name="物品名稱", value=name, inline=False)
+            embed.add_field(name="價格", value=price, inline=False)
+            embed.add_field(name="數量", value=數量, inline=False)
+            embed.add_field(name="花費", value=price*數量, inline=False)
+            embed.add_field(name="賣家", value=user.name, inline=False)
+            
+            if amount - 數量 == 0:
+                data['status'] = False
+                with open('trade.json', mode='w', encoding='utf8') as jfile:
+                    json.dump(jdata, jfile, indent=4)
+                async with ctx.channel.typing():
+                    await asyncio.sleep(1)
+                    await channel.send(embed=embed)
+                    await ctx.send(f'購買成功 :white_check_mark:')
+            if amount - 數量 > 0:
+                data['amount'] = amount - 數量
+                with open('trade.json', mode='w', encoding='utf8') as jfile:
+                    json.dump(jdata, jfile, indent=4)
+                async with ctx.channel.typing():
+                    await asyncio.sleep(1)
+                    await channel.send(embed=embed)
+                    await ctx.send(f'購買成功 :white_check_mark:')
+            if amount - 數量 < 0:
+                await ctx.send(f'目前只剩 {amount} 個')
+        else:
+            await ctx.send('此商品已售完')
 
-        embed=discord.Embed(title="物品買走單", color=0x006eff, timestamp=datetime.datetime.utcnow())
-        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
-        embed.add_field(name="物品名稱", value=name, inline=False)
-        embed.add_field(name="價格", value=price, inline=False)
-        embed.add_field(name="數量", value=amount, inline=False)
-        embed.set_footer(text='test')
 
-
-
-        
 
     @cog_ext.cog_slash()
     async def set_trade_channel(self, ctx, channel : discord.TextChannel=None):
