@@ -16,14 +16,14 @@ class Image(Cog_Extension):
     await ctx.send(jdata[name])
 
   @cog_ext.cog_slash()
-  async def iadd(self, ctx, name, url):
+  async def addImage(self, ctx, name, url):
     '''
     新增圖片
     '''
     with open('image.json', 'w', encoding='utf8') as jfile:
       jdata[name] = url
       json.dump(jdata, jfile, ensure_ascii=False, indent=4)
-    await ctx.send(f'已新增 [{name}] :white_check_mark:')
+    await ctx.send(f'已新增 `{name}` :white_check_mark:')
 
   @cog_ext.cog_slash()
   async def names(self, ctx):
