@@ -31,7 +31,7 @@ class Wool(Cog_Extension):
       async with ctx.channel.typing():
           await asyncio.sleep(1)
           await channel.send(embed=embed)
-          await ctx.send(f'訂購成功 :white_check_mark:')
+          await ctx.send(f'訂購成功 ')
         
 
     @cog_ext.cog_slash()
@@ -43,7 +43,7 @@ class Wool(Cog_Extension):
       with open('setting.json', mode='w', encoding='utf8') as jfile:
         json.dump(jdata, jfile, indent=4)
       self.channel = self.bot.get_channel(channel.id)
-      await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} :white_check_mark:') 
+      await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} ') 
         
 def setup(bot):
   bot.add_cog(Wool(bot))

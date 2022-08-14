@@ -20,17 +20,17 @@ async def on_ready():
 @slash.slash(name='load', description='load')
 async def load(ctx, extension):
   bot.load_extension(f'cmds.{extension}')
-  await ctx.send(f'已載入 [{extension}] :white_check_mark:')
+  await ctx.send(f'已載入 **{extension}** ')
 
 @slash.slash(name='unload', description='unload')
 async def unload(ctx, extension):
   bot.unload_extension(f'cmds.{extension}')
-  await ctx.send(f'已卸載 [{extension}] :white_check_mark:')
+  await ctx.send(f'已卸載 **{extension}** ')
 
 @slash.slash(name='reload', description='reload')
 async def reload(ctx, extension):
   bot.reload_extension(f'cmds.{extension}')
-  await ctx.send(f'已重載 [{extension}] :white_check_mark:')
+  await ctx.send(f'已重載 **{extension}** ')
 
 @bot.event
 async def on_command_error(ctx, error):

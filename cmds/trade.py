@@ -50,7 +50,7 @@ class Wool(Cog_Extension):
         async with ctx.channel.typing():
             await asyncio.sleep(1)
             await channel.send(embed=embed)
-            await ctx.send(f'上架成功 :white_check_mark:')
+            await ctx.send(f'上架成功 ')
 
     @cog_ext.cog_slash()
     async def buy(self, ctx, 訂單編號, 數量):
@@ -86,7 +86,7 @@ class Wool(Cog_Extension):
                 async with ctx.channel.typing():
                     await asyncio.sleep(1)
                     await channel.send(embed=embed)
-                    await ctx.send(f'購買成功 :white_check_mark:')
+                    await ctx.send(f'購買成功 ')
             if amount - 數量 > 0:
                 data['amount'] = amount - 數量
                 with open('trade.json', mode='w', encoding='utf8') as jfile:
@@ -94,7 +94,7 @@ class Wool(Cog_Extension):
                 async with ctx.channel.typing():
                     await asyncio.sleep(1)
                     await channel.send(embed=embed)
-                    await ctx.send(f'購買成功 :white_check_mark:')
+                    await ctx.send(f'購買成功 ')
             if amount - 數量 < 0:
                 await ctx.send(f'目前只剩 {amount} 個')
         else:
@@ -111,7 +111,7 @@ class Wool(Cog_Extension):
         with open('setting.json', mode='w', encoding='utf8') as jfile:
             json.dump(jdata, jfile, indent=4)
         self.channel = self.bot.get_channel(channel.id)
-        await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} :white_check_mark:') 
+        await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} ') 
         
 def setup(bot):
   bot.add_cog(Wool(bot))

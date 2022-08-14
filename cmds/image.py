@@ -23,7 +23,7 @@ class Image(Cog_Extension):
     with open('image.json', 'w', encoding='utf8') as jfile:
       jdata[name] = url
       json.dump(jdata, jfile, ensure_ascii=False, indent=4)
-    await ctx.send(f'已新增 `{name}` :white_check_mark:')
+    await ctx.send(f'已新增 `{name}` ')
 
   @cog_ext.cog_slash()
   async def names(self, ctx):
