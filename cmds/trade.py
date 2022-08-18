@@ -99,19 +99,6 @@ class Wool(Cog_Extension):
                 await ctx.send(f'目前只剩 {amount} 個')
         else:
             await ctx.send('此商品已售完')
-
-    @cog_ext.cog_slash()
-    async def set_trade_channel(self, ctx, channel : discord.TextChannel=None):
-        '''
-        設置交易頻道
-        '''
-        with open('setting.json', mode='r', encoding='utf8') as jfile:
-            jdata = json.load(jfile)
-        jdata["Trade_channel"] = channel.id
-        with open('setting.json', mode='w', encoding='utf8') as jfile:
-            json.dump(jdata, jfile, indent=4)
-        self.channel = self.bot.get_channel(channel.id)
-        await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} ') 
         
 def setup(bot):
   bot.add_cog(Wool(bot))

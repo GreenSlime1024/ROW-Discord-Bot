@@ -3,7 +3,6 @@ from discord.ext import commands
 from core.classes import Cog_Extension
 from discord_slash import cog_ext
 
-
 class Main(Cog_Extension):
   @cog_ext.cog_slash()
   async def ping(self, ctx):
