@@ -35,19 +35,5 @@ class Admin(Cog_Extension):
             self.channel = self.bot.get_channel(channel.id)
             await ctx.send(f'已設置物品上架頻道: {self.channel.mention} ')
 
-    # @cog_ext.cog_slash()
-    # async def addAdmin(self, ctx, user : discord.Member):
-    #     '''
-    #     新增管理員
-    #     '''
-    #     if ctx.author.id == jdata['topAdmin']:
-    #         with open('admin.json', mode='r', encoding='utf8') as jfile:
-    #             jdata = json.load(jfile)
-    #         jdata["admin"] = user.id
-    #         with open('admin.json', mode='w', encoding='utf8') as jfile:
-    #             json.dump(jdata, jfile, indent=4)
-    #         await ctx.send(f'已新增管理員')
-
-
 def setup(bot):
     bot.add_cog(Admin(bot))
