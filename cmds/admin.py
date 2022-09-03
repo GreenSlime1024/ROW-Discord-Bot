@@ -19,7 +19,9 @@ class Admin(Cog_Extension):
             with open('setting.json', mode='w', encoding='utf8') as jfile:
                 json.dump(jdata, jfile, indent=4)
             self.channel = self.bot.get_channel(channel.id)
-            await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention} ')
+            await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention}')
+        else:
+            await ctx.send(f'權限不足真可憐')
 
     @cog_ext.cog_slash()
     async def set_trade_channel(self, ctx, channel : discord.TextChannel):
@@ -34,6 +36,8 @@ class Admin(Cog_Extension):
                 json.dump(jdata, jfile, indent=4)
             self.channel = self.bot.get_channel(channel.id)
             await ctx.send(f'已設置物品上架頻道: {self.channel.mention} ')
+        else:
+            await ctx.send(f'權限不足真可憐')
 
 def setup(bot):
     bot.add_cog(Admin(bot))
