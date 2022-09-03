@@ -24,16 +24,26 @@ class Main(Cog_Extension):
   @cog_ext.cog_slash()
   async def ROW(self, ctx):
     '''
-    查看ROW 的介紹網站
+    查看 ROW 的介紹網站
     '''
     await ctx.send('https://greenslime9392.github.io/posts/21/07/row/')
 
   @cog_ext.cog_slash()
   async def author(self, ctx):
     '''
-    查看GreenSlime 的網站
+    查看 GreenSlime 的網站
     '''
     await ctx.send('https://greenslime9392.github.io/')
+
+  @cog_ext.cog_slash()
+  async def guild(self, ctx):
+    '''
+    查看此機器人服務的伺服器
+    '''
+    embed=discord.Embed(title="伺服器列表", color=0x8280ff)
+    for guild in self.bot.guilds:
+      embed.add_field(name=guild, value=guild.id, inline=False)
+    await ctx.send(embed=embed)
   
 def setup(bot):
   bot.add_cog(Main(bot))
