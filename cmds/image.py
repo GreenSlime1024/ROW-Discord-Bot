@@ -30,7 +30,11 @@ class Image(Cog_Extension):
     '''
     查看所有資料庫中的圖片名稱
     '''
-    await ctx.send(f'{jdata.keys()}')
+    keys = jdata.keys()
+    names = ""
+    for i in keys:
+      names += (f'`{i}` ')
+    await ctx.send(names)
 
 def setup(bot): 
   bot.add_cog(Image(bot))

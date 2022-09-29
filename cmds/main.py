@@ -26,14 +26,14 @@ class Main(Cog_Extension):
     '''
     查看 ROW 的介紹網站
     '''
-    await ctx.send('https://greenslime9392.github.io/posts/21/07/row/')
+    await ctx.send('https://greenslime1024.github.io/posts/row/')
 
   @cog_ext.cog_slash()
   async def author(self, ctx):
     '''
     查看 GreenSlime 的網站
     '''
-    await ctx.send('https://greenslime9392.github.io/')
+    await ctx.send('https://greenslime1024.github.io/')
 
   @cog_ext.cog_slash()
   async def guild(self, ctx):
