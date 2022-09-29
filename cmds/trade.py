@@ -46,11 +46,8 @@ class Wool(Cog_Extension):
         jdata['count'] = count
         with open('trade.json', mode='w', encoding='utf8') as jfile:
             json.dump(jdata, jfile, indent=4)
-
-        async with ctx.channel.typing():
-            await asyncio.sleep(1)
-            await channel.send(embed=embed)
-            await ctx.send(f'上架成功 ')
+        await channel.send(embed=embed)
+        await ctx.send(f'上架成功 ')
 
     @cog_ext.cog_slash()
     async def buy(self, ctx, 訂單編號, 數量):

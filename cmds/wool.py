@@ -28,10 +28,8 @@ class Wool(Cog_Extension):
       embed.add_field(name="價格", value=(f'未來幣 {price} 元'), inline=False)
       embed.set_footer(datetime.datetime.utcnow())
     
-      async with ctx.channel.typing():
-          await asyncio.sleep(1)
-          await channel.send(embed=embed)
-          await ctx.send(f'訂購成功 ')
+      await channel.send(embed=embed)
+      await ctx.send(f'訂購成功 ')
         
 def setup(bot):
   bot.add_cog(Wool(bot))
