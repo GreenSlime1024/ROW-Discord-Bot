@@ -11,7 +11,7 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 ### 舊版
 
 輸入 r! buyw [顏色] [數量] [交貨方式] [備註] 就可讓 ***ROW*** Bot 產生訂單。
-![Image](https://cdn.discordapp.com/attachments/915198299370324009/985216307035271218/1fab1ebc3766a852.png#center)
+![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025412955640184902/unknown.png#center)
 
 ### 新版
 採用 slash command 
