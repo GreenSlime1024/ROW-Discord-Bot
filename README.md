@@ -19,7 +19,7 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 ![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025407662017478666/unknown.png#center)
 
 後面還有兩個選填，要送給誰和備註。
-![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025407818636996730/unknown.png#center)
+![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025410102586511431/unknown.png)
 
 ---
 ## m.cs 建造中
