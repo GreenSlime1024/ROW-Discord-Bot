@@ -54,7 +54,7 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 ## 更多照片
 
 m.cs 光追照。
-![image](https://cdn.discordapp.com/attachments/922065882862219304/922070387666337802/unknown.png#center)
+![image](https://cdn.discordapp.com/attachments/1024342315638214656/1025423931890487337/unknown_82.png#center)
 
 前執行長 GreenSlime 跟現任執行長 Sushicat 在白毛雞合影。
 ![image](https://cdn.discordapp.com/attachments/922065882862219304/922066230448369684/unknown.png#center)
