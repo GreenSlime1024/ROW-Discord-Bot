@@ -1,6 +1,7 @@
 # ROW-Bot
 
 This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
+(inspired by ROG)
 
 我之前玩未來日記 Minecraft 伺服器的時候，我蓋了羊毛雞，原本只是炸獄髓用的，但之後我就拿來賣，沒想到還蠻受歡迎的。但是原本那台是各種顏色的羊，然後底下再接自動分類雞，但這樣效率太低了。所以又做了一台單一顏色的白毛雞，效率大約平均 1 小時 49 組，那時候因為很多人要買羊毛，所以乾脆創了一個 Discord Server 來賣，並成立 REPUBLIC OF WOOL$ 簡稱 ROW 。為了更方便交易，我寫了一個 ROW Bot 來幫我產生訂單，還會自動算錢。但之後伺服器硬碟就壞了，服主 SD 好像也要忙課業，所以 SD 預計要等到 2022.12.31 才會重啟伺服器。
 
@@ -13,8 +14,12 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 ![Image](https://cdn.discordapp.com/attachments/915198299370324009/985216307035271218/1fab1ebc3766a852.png#center)
 
 ### 新版
-輸入 /buyw 然後依序填入空格，後面還有兩個選填，要送給誰和備註。 (按一下圖片可以去 YouTube 看影片)
-[![輸入 /buyw 然後依序填入空格，後面還有兩個選填，要送給誰和備註。](https://cdn.discordapp.com/attachments/786971603334201385/1003699492186497154/unknown.png)](https://youtu.be/UTab8VGbuOw)
+採用 slash command 
+輸入 /buyw 然後填入資訊。
+![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025407662017478666/unknown.png#center)
+
+後面還有兩個選填，要送給誰和備註。
+![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025407818636996730/unknown.png#center)
 
 ---
 ## m.cs 建造中
@@ -65,31 +70,31 @@ m.cs 光追照。
 ## 感謝 ROW 工作團隊
 
 ### 創始玩家 - 擁有ROW的所有權
-- 貓咪之都-Manieon
+- 貓咪之都 - Manieon
 - 前 ROW 執行長兼現任副執行長暨創辦人 羊毛商 姆姆
 
 ### 執行長 - 掌管所有ROW的事物(除了刪除ROW)
-- Sushicat0416-壽司貓
+- Sushicat0416 - 壽司貓
 
 ### 副執行長 - 當執行長無法執行時發揮作用
 - 前 ROW 執行長兼現任副執行長暨創辦人 羊毛商 姆姆
 
 ### ROW Discord MOD - 管理DC群
-- 快樂的小孩-SD
+- 快樂的小孩 - SD
 - 前 ROW 執行長兼現任副執行長暨創辦人 羊毛商 姆姆
-- 貓咪之都-Manieon
-- Sushicat0416-壽司貓
+- 貓咪之都 - Manieon
+- Sushicat0416 - 壽司貓
 - eri24816
 
 ### 建築師 - 裝潢 m.cs
-- 貓咪之都-Manieon
+- 貓咪之都 - Manieon
 
 ### ROW Bot 開發人員 - 開發 ROW Bot
 - 前 ROW 執行長兼現任副執行長暨創辦人 羊毛商 姆姆
 - eri24816
 
 ### WoolPanda - 羊毛外送員
-- Sushicat0416-壽司貓
+- Sushicat0416 - 壽司貓
 
 ### WoolberEats  - 羊毛外送員
 - vespineyak45129
