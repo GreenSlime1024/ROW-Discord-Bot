@@ -9,7 +9,7 @@ class Task(Cog_Extension):
     async def activiy_task():
       await self.bot.wait_until_ready()
       while not self.bot.is_closed():
-        activity = ['SD快開服', '運作平台: 桌機', '現在改用 slash command (/)', 'ROW 網站: https://greenslime1024.github.io/posts/row/', 'Made By GreenSlime1024']
+        activity = ['SD快開服', '運作平台: Eri24816 租的 server', '現在改用 slash command (/)', 'ROW 網站: https://greenslime1024.github.io/posts/row/', 'Made By GreenSlime1024']
         for i in range(len(activity)-1):
           await self.bot.change_presence(activity=discord.Game(name=activity[i]))
           await asyncio.sleep(15)
