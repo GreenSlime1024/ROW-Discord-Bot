@@ -2,7 +2,7 @@
 
 This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 
-我之前玩未來日記 Minecraft 伺服器的時候，我蓋了羊毛雞，原本只是炸獄髓用的，但之後我就拿來賣，沒想到還蠻受歡迎的。但是原本那台是各種顏色的羊，然後底下再接自動分類雞，但這樣效率太低了。所以又做了一台單一顏色的白毛雞，效率大約平均 1 小時 49 組，那時候因為很多人要買羊毛，所以乾脆創了一個 Discord Server 來賣，並成立 REPUBLIC OF WOOL$ 簡稱 ROW 。為了更方便交易，我寫了一個 ROW Bot 來幫我產生訂單，還會自動算錢。但之後伺服器硬碟就壞了，服主 SD 好像也要忙課業，所以 SD 預計要等到 2022.12.31 才會重啟伺服器。
+我之前玩未來日記 Minecraft 伺服器的時候，我蓋了羊毛雞，原本只是炸獄髓用的，但之後我就拿來賣，沒想到還蠻受歡迎的。但是原本那台是各種顏色的羊，然後底下再接自動分類雞，但這樣效率太低了。所以又做了一台單一顏色的白毛雞，效率大約平均 1 小時 49 組，那時候因為很多人要買羊毛，所以乾脆創了一個 [Discord Server](https://discord.gg/7gK6HMRqve) 來賣，並成立 ***REPUBLIC OF WOOL$*** 簡稱 ***ROW*** 。為了更方便交易，我寫了一個 ***ROW*** Bot 來幫我產生訂單，還會自動算錢。但之後伺服器硬碟就壞了，服主 SD 好像也要忙課業，所以 SD 預計要等到 2022.12.31 才會重啟伺服器。
 
 ---
 
@@ -54,7 +54,7 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 ## 更多照片
 
 m.cs 光追照。
-![image](https://cdn.discordapp.com/attachments/1024342315638214656/1025423931890487337/unknown_82.png#center)
+![image](https://cdn.discordapp.com/attachments/1024342315638214656/1025779248490893393/unknown_84.png#center)
 
 前執行長 GreenSlime 跟現任執行長 Sushicat 在白毛雞合影。
 ![image](https://cdn.discordapp.com/attachments/922065882862219304/922066230448369684/unknown.png#center)
@@ -97,5 +97,3 @@ m.cs 光追照。
 
 ### WoolberEats  - 羊毛外送員
 - vespineyak45129
-
-你也可以到我的 blog 看: https://greenslime1024.github.io/posts/row/
