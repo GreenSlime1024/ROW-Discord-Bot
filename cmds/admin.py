@@ -16,7 +16,7 @@ class Admin(Cog_Extension):
         '''
         設置訂單放置頻道
         '''
-        jdata["Order_channel"] = channel.id
+        jdata["wool_channel"] = channel.id
         with open('channel.json', mode='w', encoding='utf8') as jfile:
             json.dump(jdata, jfile, indent=4)
         self.channel = self.bot.get_channel(channel.id)

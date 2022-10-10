@@ -14,7 +14,7 @@ class Wool(Cog_Extension):
       '''
       產生 $羊毛訂購單$
       '''
-      channel = self.bot.get_channel(int(jdata['Order_channel']))
+      channel = self.bot.get_channel(int(jdata['wool_channel']))
       price = 大箱*8640+小箱*4320
       embed=discord.Embed(title="$羊毛訂購單$", color=0x8280ff, timestamp=datetime.datetime.utcnow())
       embed.set_author(name=ctx.author, icon_url=ctx.author.avatar_url)
