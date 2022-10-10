@@ -10,7 +10,8 @@ with open('not_token.json', mode='r', encoding='utf8') as jfile:
 
 intents = discord.Intents.all()
 
-bot = commands.Bot(command_prefix='r!', intents=intents, owner_id = 1022080471506624545)
+owners = [1022080471506624545, 364976571192311808]
+bot = commands.Bot(command_prefix='r!', intents=intents, owner_ids = set(owners))
 slash = SlashCommand(bot, sync_commands=True)
 
 @bot.event
@@ -34,10 +35,6 @@ async def unload(ctx, extension):
 async def reload(ctx, extension):
   bot.reload_extension(f'cmds.{extension}')
   await ctx.send(f'已重載 **{extension}** ')
-
-@bot.event
-async def on_command_error(ctx, error):
- await ctx.send(error)
 
 for filename in os.listdir('./cmds'):
   if filename.endswith('.py'):
