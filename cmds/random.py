@@ -21,12 +21,12 @@ class Random(Cog_Extension):
     await ctx.send(random_ball)
 
   @cog_ext.cog_slash()
-  async def pa(self, ctx, *, msg):
+  async def pa(self, ctx, *, question):
     '''
     預估某事件發生的機率
     '''
     rate = random.randint(0,100)
-    await ctx.send(f'{msg}的機率有 **{rate}%**')
+    await ctx.send(f'{question}的機率有 **{rate}%**')
 
 
 def setup(bot):
