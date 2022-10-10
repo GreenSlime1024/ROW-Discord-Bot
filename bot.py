@@ -22,19 +22,19 @@ async def on_ready():
 @commands.is_owner()
 async def load(ctx, extension):
   bot.load_extension(f'cmds.{extension}')
-  await ctx.send(f'已載入 **{extension}** ')
+  await ctx.send(f'已載入 `{extension}`', hidden = True)
 
 @slash.slash(name='unload', description='unload')
 @commands.is_owner()
 async def unload(ctx, extension):
   bot.unload_extension(f'cmds.{extension}')
-  await ctx.send(f'已卸載 **{extension}** ')
+  await ctx.send(f'已卸載 `{extension}`', hidden = True)
 
 @slash.slash(name='reload', description='reload')
 @commands.is_owner()
 async def reload(ctx, extension):
   bot.reload_extension(f'cmds.{extension}')
-  await ctx.send(f'已重載 **{extension}** ')
+  await ctx.send(f'已重載 `{extension}`', hidden = True)
 
 for filename in os.listdir('./cmds'):
   if filename.endswith('.py'):

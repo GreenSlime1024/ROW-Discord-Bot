@@ -12,7 +12,7 @@ class Couplets(Cog_Extension):
     '''
     name = ctx.channel.name
     if name.endswith('⟨春⟩') or name.endswith('⟨福⟩'):
-     await ctx.send('已經貼過了呦')
+     await ctx.send('已經貼過了呦', hidden = True)
     else:
       couplets = random.randint(0, 1)
       if couplets == 0:
@@ -33,7 +33,7 @@ class Couplets(Cog_Extension):
       await ctx.channel.edit(name=name)
       await ctx.send('(撕')
     else:
-      await ctx.send('沒有春聯可以撕喔')
+      await ctx.send('沒有春聯可以撕喔', hidden = True)
       
       
 

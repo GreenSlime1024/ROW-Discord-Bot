@@ -27,7 +27,7 @@ class Wool(Cog_Extension):
       embed.set_footer(datetime.datetime.utcnow())
     
       await channel.send(embed=embed)
-      await ctx.send(f'訂購成功 ')
+      await ctx.send(f'訂購成功!', hidden = True)
         
 def setup(bot):
   bot.add_cog(Wool(bot))
