@@ -3,8 +3,6 @@ from discord.ext import commands
 from core.classes import Cog_Extension
 import datetime
 import json
-import random
-import asyncio
 from discord_slash import cog_ext
 
 with open('setting.json', mode='r', encoding='utf8') as jfile:
