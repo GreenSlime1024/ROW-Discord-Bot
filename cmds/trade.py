@@ -15,7 +15,7 @@ class Wool(Cog_Extension):
         with open('trade.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         count = jdata['count']
-        with open('setting.json', mode='r', encoding='utf8') as jfile:
+        with open('channel.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         channel = self.bot.get_channel(int(jdata['Trade_channel']))
         embed=discord.Embed(title="物品上架", color=0x00ff40, timestamp=datetime.datetime.utcnow())
@@ -54,7 +54,7 @@ class Wool(Cog_Extension):
         '''
         買入物品
         '''
-        with open('setting.json', mode='r', encoding='utf8') as jfile:
+        with open('channel.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         channel = self.bot.get_channel(int(jdata['Trade_channel']))
         with open('trade.json', mode='r', encoding='utf8') as jfile:

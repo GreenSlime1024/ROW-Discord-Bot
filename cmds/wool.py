@@ -5,7 +5,7 @@ import datetime
 import json
 from discord_slash import cog_ext
 
-with open('setting.json', mode='r', encoding='utf8') as jfile:
+with open('channel.json', mode='r', encoding='utf8') as jfile:
   jdata = json.load(jfile)
 
 class Wool(Cog_Extension):
