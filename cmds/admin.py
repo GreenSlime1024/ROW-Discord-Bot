@@ -46,6 +46,5 @@ class Admin(Cog_Extension):
         os.system(command)
         await interaction.response.send_message(f'`{command}` sended',ephemeral=True)
     
-
 async def setup(bot):
     await bot.add_cog(Admin(bot))
