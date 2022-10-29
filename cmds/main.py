@@ -40,11 +40,11 @@ class Main(Cog_Extension):
     await interaction.response.send_message('https://greenslime1024.github.io/')
 
   @app_commands.command()
-  async def author(self, interaction: discord.Interaction):
+  async def repo(self, interaction: discord.Interaction):
     '''
     Check ROW Bot's repo
     '''
-    await interaction.response.send_message('https://greenslime1024.github.io/')
+    await interaction.response.send_message('https://github.com/GreenSlime1024/ROW-Discord-Bot')
     
   @app_commands.command()
   async def guild(self, interaction: discord.Interaction):
