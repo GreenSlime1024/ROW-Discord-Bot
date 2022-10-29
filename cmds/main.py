@@ -1,49 +1,60 @@
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
-from discord_slash import cog_ext
+from discord import app_commands
 
 class Main(Cog_Extension):
-  @cog_ext.cog_slash()
-  async def ping(self, ctx):
-    '''
-    查看目前的 ping
-    '''
-    await ctx.send(f'pong ({round(self.bot.latency*1000)}ms)')
+  @commands.Cog.listener()
+  async def on_ready(self):
+    print('Main cog loaded.')
 
-  @cog_ext.cog_slash()
-  async def avatar(self, ctx, member:discord.Member=None, size:int=1024):
+  @app_commands.command()
+  async def ping(self, interaction: discord.Interaction):
+    '''
+    Check ping
+    '''
+    await interaction.response.send_message(f'pong ({round(self.bot.latency*1000)}ms)')
+
+  @app_commands.command()
+  async def avatar(self, interaction: discord.Interaction, member:discord.Member=None):
+    '''
+    Check someone's avatar
+    '''
     if member == None:
-      member = ctx.author
-    '''
-    查看使用者的頭像
-    '''
-    userAvatarUrl = member.avatar_url_as(size=size)
-    await ctx.send(str(userAvatarUrl))
+      member = interaction.user
+    userAvatarUrl = member.display_avatar
+    await interaction.response.send_message(str(userAvatarUrl))
     
-  @cog_ext.cog_slash()
-  async def ROW(self, ctx):
+  @app_commands.command()
+  async def row(self, interaction: discord.Interaction):
     '''
-    查看 ROW 的介紹網站
+    Check the blog about ROW
     '''
-    await ctx.send('https://greenslime1024.github.io/posts/row/')
+    await interaction.response.send_message('https://greenslime1024.github.io/posts/row/')
 
-  @cog_ext.cog_slash()
-  async def author(self, ctx):
+  @app_commands.command()
+  async def author(self, interaction: discord.Interaction):
     '''
-    查看 GreenSlime 的網站
+    Check GreenSlime's blog
     '''
-    await ctx.send('https://greenslime1024.github.io/')
+    await interaction.response.send_message('https://greenslime1024.github.io/')
 
-  @cog_ext.cog_slash()
-  async def guild(self, ctx):
+  @app_commands.command()
+  async def author(self, interaction: discord.Interaction):
     '''
-    查看此機器人服務的伺服器
+    Check ROW Bot's repo
     '''
-    embed=discord.Embed(title="伺服器列表", color=0x8280ff)
+    await interaction.response.send_message('https://greenslime1024.github.io/')
+    
+  @app_commands.command()
+  async def guild(self, interaction: discord.Interaction):
+    '''
+    Check guilds which i provide services
+    '''
+    embed=discord.Embed(title="Server List", color=0x8280ff)
     for guild in self.bot.guilds:
       embed.add_field(name=guild, value=guild.id, inline=False)
-    await ctx.send(embed=embed)
+    await interaction.response.send_message(embed=embed)
   
-def setup(bot):
-  bot.add_cog(Main(bot))
+async def setup(bot):
+  await bot.add_cog(Main(bot))

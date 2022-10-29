@@ -1,49 +1,45 @@
-from tkinter import HIDDEN
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
 import json
-from discord_slash import cog_ext
+from discord import app_commands
 
 with open('channel.json', mode='r', encoding='utf8') as jfile:
     jdata = json.load(jfile)
 
 class Admin(Cog_Extension):
-    
-    @cog_ext.cog_slash()
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print('Admin cog loaded.')
+
     @commands.is_owner()
-    async def set_order_channel(self, ctx, channel : discord.TextChannel):
-        '''
-        設置訂單放置頻道
-        '''
+    @app_commands.command()
+    async def set_order_channel(self, interaction: discord.Interaction, channel : discord.TextChannel):
         jdata["wool_channel"] = channel.id
         with open('channel.json', mode='w', encoding='utf8') as jfile:
             json.dump(jdata, jfile, indent=4)
         self.channel = self.bot.get_channel(channel.id)
-        await ctx.send(f'已設置訂單儲存頻道: {self.channel.mention}', hidden = True)
+        await interaction.response.send_message(f'wool channel set to {self.channel.mention}.', ephemeral=True)
 
-    @cog_ext.cog_slash()
+
     @commands.is_owner()
-    async def set_trade_channel(self, ctx, channel : discord.TextChannel):
-        '''
-        設置物品上架頻道
-        '''
+    @app_commands.command()
+    async def set_trade_channel(self, interaction: discord.Interaction, channel : discord.TextChannel):
         with open('channel.json', mode='r', encoding='utf8') as jfile:
             jdata = json.load(jfile)
         jdata["Trade_channel"] = channel.id
         with open('channel.json', mode='w', encoding='utf8') as jfile:
             json.dump(jdata, jfile, indent=4)
             self.channel = self.bot.get_channel(channel.id)
-            await ctx.send(f'已設置物品上架頻道: {self.channel.mention}', hidden = True)
+            await interaction.response.send_message(f'trade channel set to {self.channel.mention}.',ephemeral=True)
     
-    @cog_ext.cog_slash()
     @commands.is_owner()
-    async def say(self, ctx, msg):
-        '''
-        讓他說話
-        '''
-        await ctx.channel.send(msg)
-        await ctx.send('成功送出!', hidden = True)
+    @commands.command()
+    async def sync(self, ctx):
+        fmt = await ctx.bot.tree.sync()
+        await ctx.reply(f'synced {len(fmt)} commands')
+    
+    
 
-def setup(bot):
-    bot.add_cog(Admin(bot))
+async def setup(bot):
+    await bot.add_cog(Admin(bot))

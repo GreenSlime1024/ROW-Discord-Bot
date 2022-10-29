@@ -5,6 +5,9 @@ from core.classes import Cog_Extension
 
 class Event(Cog_Extension):
   @commands.Cog.listener()
+  async def on_ready(self):
+    print('Event cog loaded.')
+
   async def on_message(self, msg):
     if msg.content == '早安' and msg.author != self.bot.user:
       async with msg.channel.typing():
@@ -36,5 +39,5 @@ class Event(Cog_Extension):
         await asyncio.sleep(1)
         await msg.channel.send('虛~ 他在睡覺')
   
-def setup(bot):
-  bot.add_cog(Event(bot))
+async def setup(bot):
+  await bot.add_cog(Event(bot))

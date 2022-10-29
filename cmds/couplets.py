@@ -2,40 +2,44 @@ import discord
 import random
 from discord.ext import commands
 from core.classes import Cog_Extension
-from discord_slash import cog_ext
+from discord import app_commands
 
 class Couplets(Cog_Extension):
-  @cog_ext.cog_slash()
-  async def 貼春聯(self, ctx):
+  @commands.Cog.listener()
+  async def on_ready(self):
+    print('Couplets cog loaded.')
+
+  @app_commands.command()
+  async def 貼春聯(self, interaction: discord.Interaction):
     '''
     在頻道名稱後方加上 '"春"或"福"'
     '''
-    name = ctx.channel.name
+    name = interaction.channel.name
     if name.endswith('⟨春⟩') or name.endswith('⟨福⟩'):
-     await ctx.send('已經貼過了呦', hidden = True)
+     await interaction.response.send_message('已經貼過了呦', ephemeral=True)
     else:
       couplets = random.randint(0, 1)
       if couplets == 0:
-        await ctx.channel.edit(name=name + '⟨春⟩')
+        await interaction.channel.edit(name=name + '⟨春⟩')
       else:
-        await ctx.channel.edit(name=name + '⟨福⟩')
-      await ctx.send('(貼')
+        await interaction.channel.edit(name=name + '⟨福⟩')
+      await interaction.response.send_message('(貼')
 
-  @cog_ext.cog_slash()
-  async def 撕春聯(self, ctx):
+  @app_commands.command()
+  async def 撕春聯(self, interaction: discord.Interaction):
     '''
     把頻道名稱後方的春聯撕起來
     '''
-    name = ctx.channel.name
+    name = interaction.channel.name
     length = len(name)
     if name.endswith('⟨春⟩') or name.endswith('⟨福⟩'):
       name = name[:length-3]
-      await ctx.channel.edit(name=name)
-      await ctx.send('(撕')
+      await interaction.channel.edit(name=name)
+      await interaction.response.send_message('(撕')
     else:
-      await ctx.send('沒有春聯可以撕喔', hidden = True)
+      await interaction.response.send_message('沒有春聯可以撕喔', ephemeral=True)
       
       
 
-def setup(bot):
-  bot.add_cog(Couplets(bot))
+async def setup(bot):
+  await bot.add_cog(Couplets(bot))
