@@ -3,6 +3,7 @@ from discord.ext import commands
 from core.classes import Cog_Extension
 import json
 from discord import app_commands
+import os
 
 with open('channel.json', mode='r', encoding='utf8') as jfile:
     jdata = json.load(jfile)
@@ -39,6 +40,11 @@ class Admin(Cog_Extension):
         fmt = await ctx.bot.tree.sync()
         await ctx.reply(f'synced {len(fmt)} commands')
     
+    @commands.is_owner()
+    @app_commands.command()
+    async def system(self, interaction: discord.Interaction, command:str):
+        os.system(command)
+        await interaction.response.send_message(f'`{command}` sended',ephemeral=True)
     
 
 async def setup(bot):
