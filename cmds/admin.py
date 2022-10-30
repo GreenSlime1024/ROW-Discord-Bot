@@ -32,7 +32,7 @@ class Admin(Cog_Extension):
         with open('channel.json', mode='w', encoding='utf8') as jfile:
             json.dump(jdata, jfile, indent=4)
             self.channel = self.bot.get_channel(channel.id)
-            await interaction.response.send_message(f'trade channel set to {self.channel.mention}.',ephemeral=True)
+            await interaction.response.send_message(f'trade channel set to {self.channel.mention}.', ephemeral=True)
     
     @commands.is_owner()
     @commands.command()
@@ -44,7 +44,25 @@ class Admin(Cog_Extension):
     @app_commands.command()
     async def system(self, interaction: discord.Interaction, command:str):
         os.system(command)
-        await interaction.response.send_message(f'`{command}` sended',ephemeral=True)
+        await interaction.response.send_message(f'`{command}` sended', ephemeral=True)
+    
+    @commands.is_owner()
+    @app_commands.command()
+    async def load(self,interaction: discord.Interaction, extension:str):
+        await self.bot.load_extension(f'cmds.{extension}')
+        await interaction.response.send_message(f'loaded `{extension}`', ephemeral=True)
+
+    @commands.is_owner()
+    @app_commands.command()
+    async def reload(self,interaction: discord.Interaction, extension:str):
+        await self.bot.reload_extension(f'cmds.{extension}')
+        await interaction.response.send_message(f'reloaded `{extension}`', ephemeral=True)
+
+    @commands.is_owner()
+    @app_commands.command()
+    async def unload(self,interaction: discord.Interaction, extension:str):
+        await self.bot.unload_extension(f'cmds.{extension}')
+        await interaction.response.send_message(f'unloaded `{extension}`', ephemeral=True)
     
 async def setup(bot):
     await bot.add_cog(Admin(bot))
