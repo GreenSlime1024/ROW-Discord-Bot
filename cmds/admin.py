@@ -44,7 +44,7 @@ class Admin(Cog_Extension):
     @app_commands.command()
     async def system(self, interaction: discord.Interaction, command:str):
         os.system(command)
-        await interaction.response.send_message(f'`{command}` sended', ephemeral=True)
+        await interaction.response.send_message(f'`{command}` sended', ephemeral=False)
     
     @commands.is_owner()
     @app_commands.command()
