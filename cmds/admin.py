@@ -50,19 +50,19 @@ class Admin(Cog_Extension):
     @app_commands.command()
     async def load(self,interaction: discord.Interaction, extension:str):
         await self.bot.load_extension(f'cmds.{extension}')
-        await interaction.response.send_message(f'loaded `{extension}`', ephemeral=True)
+        await interaction.response.send_message(f'loaded `{extension}`', ephemeral=False)
 
     @commands.is_owner()
     @app_commands.command()
     async def reload(self,interaction: discord.Interaction, extension:str):
         await self.bot.reload_extension(f'cmds.{extension}')
-        await interaction.response.send_message(f'reloaded `{extension}`', ephemeral=True)
+        await interaction.response.send_message(f'reloaded `{extension}`', ephemeral=False)
 
     @commands.is_owner()
     @app_commands.command()
     async def unload(self,interaction: discord.Interaction, extension:str):
         await self.bot.unload_extension(f'cmds.{extension}')
-        await interaction.response.send_message(f'unloaded `{extension}`', ephemeral=True)
+        await interaction.response.send_message(f'unloaded `{extension}`', ephemeral=False)
     
 async def setup(bot):
     await bot.add_cog(Admin(bot))
