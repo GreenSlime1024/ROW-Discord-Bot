@@ -17,7 +17,7 @@ import random
 class Braille(Cog_Extension):
     @commands.Cog.listener()
     async def on_ready(self):
-        print('Art cog loaded.')
+        print('Braille cog loaded.')
 
     @app_commands.command()
     async def braille(self, interaction: discord.Interaction, url:str, width:int, autocontrast:bool):
