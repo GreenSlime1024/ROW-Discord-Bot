@@ -18,7 +18,7 @@ class Braille(Cog_Extension):
     async def on_ready(self):
         print('Braille cog loaded.')
 
-    @app_commands.command()
+    @app_commands.command(name='braille-art', description='generate braille art')
     async def braille(self, interaction: discord.Interaction, url:str, width:int, autocontrast:bool=True, inverted:bool=True, dither:bool=False):
         def generator(path, width, autocontrast, inverted, dither):
             # Arg Parsing
