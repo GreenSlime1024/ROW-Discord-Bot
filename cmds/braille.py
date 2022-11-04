@@ -7,7 +7,6 @@ I changed it on 2022/10/30.
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
-import json
 from discord import app_commands
 import os
 import requests
@@ -20,13 +19,13 @@ class Braille(Cog_Extension):
         print('Braille cog loaded.')
 
     @app_commands.command()
-    async def braille(self, interaction: discord.Interaction, url:str, width:int, autocontrast:bool):
-        def generator(path, width, autocontrast):
+    async def braille(self, interaction: discord.Interaction, url:str, width:int, autocontrast:bool=True, inverted:bool=True, dither:bool=False):
+        def generator(path, width, autocontrast, inverted, dither):
             # Arg Parsing
             imgpath = path
             new_width = width
-            inverted = True
-            dither = False
+            inverted = inverted
+            dither = dither
             algorythm = "none"
             noempty = False
             colorstyle = "none"
@@ -185,7 +184,7 @@ class Braille(Cog_Extension):
         path = str(random.randint(0, 999999))
         with open(f'{path}.png', 'wb') as handler:
             handler.write(img_data)
-        generator(path+'.png', width, autocontrast)
+        generator(path+'.png', width, autocontrast, inverted, dither)
         await interaction.response.send_message(f'```{output}```')
         file = f'{path}.png'
         os.remove(file)
