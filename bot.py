@@ -18,9 +18,9 @@ class MyBot(commands.Bot):
     print('Online.')
 
   async def setup_hook(self):
-    for filename in os.listdir('./cmds'):
+    for filename in os.listdir('./cogs'):
       if filename.endswith('.py'):
-        await bot.load_extension(f'cmds.{filename[:-3]}')
+        await bot.load_extension(f'cogs.{filename[:-3]}')
 
 bot = MyBot()
 if __name__ == "__main__":
