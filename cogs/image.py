@@ -25,7 +25,7 @@ class Image(Cog_Extension):
             json.dump(jdata, jfile, ensure_ascii=False, indent=4)
         await interaction.response.send_message(f"add `{name}` successfully")
 
-    @app_commands.command(name="check-images-name", description="check all images" names in database")
+    @app_commands.command(name="check-images-name", description="check all images' names in database")
     async def names(self, interaction: discord.Interaction):
         keys = jdata.keys()
         names = ""
