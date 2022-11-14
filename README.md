@@ -21,7 +21,6 @@ This is ROW ***REPUBLIC OF WOOL$*** 羊毛共和國
 後面還有兩個選填，要送給誰和備註。
 ![Image](https://cdn.discordapp.com/attachments/1023616143652573214/1025410102586511431/unknown.png#center)
 
-repo: https://github.com/GreenSlime1024/ROW-Discord-Bot
 ---
 ## m.cs 建造中
 
