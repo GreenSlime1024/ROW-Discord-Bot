@@ -35,7 +35,7 @@ class Admin(Cog_Extension):
             await interaction.response.send_message(f"trade channel set to {self.channel.mention}.", ephemeral=True)
             
     @commands.is_owner()
-    @commands.command()
+    @app_commands.command()
     async def say(self, interaction: discord.Interaction, msg):
         await interaction.channel.send(msg)
         await interaction.response.send_message(f"message sended", ephemeral=True)
