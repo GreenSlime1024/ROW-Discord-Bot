@@ -33,6 +33,12 @@ class Admin(Cog_Extension):
             json.dump(jdata, jfile, indent=4)
             self.channel = self.bot.get_channel(channel.id)
             await interaction.response.send_message(f"trade channel set to {self.channel.mention}.", ephemeral=True)
+            
+    @commands.is_owner()
+    @commands.command()
+    async def sync(self, interaction: discord.Interaction, msg):
+        await interaction.channel.send(msg)
+        await interaction.response.send_message(f"message sended", ephemeral=True)
 
     @commands.is_owner()
     @commands.command()
