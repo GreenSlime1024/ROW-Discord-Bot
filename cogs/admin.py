@@ -36,7 +36,7 @@ class Admin(Cog_Extension):
             
     @commands.is_owner()
     @app_commands.command()
-    async def say(self, interaction: discord.Interaction, msg):
+    async def say(self, interaction: discord.Interaction, msg:str):
         await interaction.channel.send(msg)
         await interaction.response.send_message(f"message sended", ephemeral=True)
 
