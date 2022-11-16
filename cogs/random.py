@@ -15,8 +15,8 @@ class Random(Cog_Extension):
     async def on_ready(self):
         print("Random cog loaded.")
 
-    @app_commands.command(name="Magic 8 ball", description="ask Magic 8 ball a question")
-    async def Magic_8_ball(self, interaction: discord.Interaction, question: str):
+    @app_commands.command(name="magic_8_ball", description="ask Magic 8 ball a question")
+    async def magic_8_ball(self, interaction: discord.Interaction, question: str):
         random_ball = random.choice(jdata["ball"])
         if random_ball == "https://cdn.discordapp.com/attachments/887330126147256323/919167797240688680/81235.png":
             await interaction.response.send_message("idk but I Never Gonna Give You Up")
