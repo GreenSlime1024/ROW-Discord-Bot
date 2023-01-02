@@ -23,11 +23,8 @@ class Couplets(Cog_Extension):
                 await interaction.channel.edit(name=name + "⟨福⟩")
             await interaction.response.send_message("(貼")
 
-    @app_commands.command()
+    @app_commands.command(name="撕春聯", description="把頻道名稱後方的春聯撕起來")
     async def 撕春聯(self, interaction: discord.Interaction):
-        """
-        把頻道名稱後方的春聯撕起來
-        """
         name = interaction.channel.name
         length = len(name)
         if name.endswith("⟨春⟩") or name.endswith("⟨福⟩"):

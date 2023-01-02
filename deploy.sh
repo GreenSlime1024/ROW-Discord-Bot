@@ -1,3 +1,3 @@
 git add .
-git commit -m "update"
+git commit --author="GreenSlime1024 <GreenSlime1024@gmail.com>" -m "update"
 git push

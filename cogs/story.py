@@ -20,7 +20,7 @@ class Story(Cog_Extension):
         random_story = random.choice(stories)
         await interaction.response.send_message(random_story)
         
-
+    @commands.is_owner()
     @app_commands.command(name="加故事", description="添加故事到故事庫")
     async def addimage(self, interaction: discord.Interaction, story: str):
         stories = jdata["stories"]
