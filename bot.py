@@ -16,7 +16,7 @@ class MyBot(commands.Bot):
         super().__init__(command_prefix='r', intents=intents, owner_ids=set(owners))
 
     async def on_ready(self):
-        print('Online.')
+        print('Online!!!!!!!!!!!!!!!!')
 
     async def setup_hook(self):
         for filename in os.listdir('./cogs'):
