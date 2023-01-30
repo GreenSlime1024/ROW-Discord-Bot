@@ -9,6 +9,7 @@ class Event(Cog_Extension):
     async def on_ready(self):
         print("Event cog loaded.")
 
+    @commands.Cog.listener()
     async def on_message(self, msg):
         if msg.content == "早安" and msg.author != self.bot.user:
             async with msg.channel.typing():
@@ -25,7 +26,7 @@ class Event(Cog_Extension):
                 await asyncio.sleep(1)
                 await msg.channel.send("晚安")
 
-        if "免費nitro" in msg.content and msg.author != self.bot.user:
+        if "免費 nitro" in msg.content and msg.author != self.bot.user:
             async with msg.channel.typing():
                 await asyncio.sleep(1)
                 await msg.channel.send("https://cdn.discordapp.com/attachments/694534457985597443/882552709083971604/image0.png")
